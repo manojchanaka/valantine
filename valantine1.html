@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day ❤️</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #ffb6c1 0%, #ff69b4 100%);
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.5);
+            bottom: -20px;
+            animation: float 6s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main card */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 2rem 2rem 3rem;
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            margin: 2rem auto;
+            position: relative;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* GIF container */
+        .gif-container {
+            margin: 1rem 0 2rem;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(219, 20, 90, 0.3);
+            border: 5px solid white;
+        }
+
+        .gif-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Headings */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #d6336c;
+            text-shadow: 2px 2px 0 #ffe6f0, 4px 4px 0 rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .sub-message {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #b34167;
+            margin-bottom: 2rem;
+            font-family: 'Dancing Script', cursive;
+            border-bottom: 2px dashed #ff99bb;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .personal-note {
+            font-size: 1.3rem;
+            background: #fff0f5;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            color: #b32d5e;
+            font-weight: 600;
+            box-shadow: 0 5px 0 #ffb6c1;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Small hearts decoration */
+        .heart-deco {
+            color: #ff4d6d;
+            font-size: 2rem;
+            margin: 0.5rem 0;
+            letter-spacing: 10px;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            .sub-message {
+                font-size: 1.5rem;
+            }
+            .personal-note {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating hearts -->
+    <div id="hearts-container"></div>
+
+    <!-- Main card -->
+    <div class="card">
+        <div class="heart-deco">❤️ ❤️ ❤️</div>
+        
+        <!-- ========== GIF SECTION ========== -->
+        <!-- 
+            Here's a beautiful Valentine's GIF (love heart animation).
+            If you want to change it, replace the src URL with your own.
+            Some alternative romantic GIFs you can use:
+            
+            - Cute teddy bear with hearts: 
+              https://media.giphy.com/media/l41lI4b5KdGzfJjaY/giphy.gif
+            - "I love you" in sign language with hearts:
+              https://media.giphy.com/media/3o7abB06u9bNzA8LC8/giphy.gif
+            - Romantic couple dancing:
+              https://media.giphy.com/media/26gR2qGRnxxXAvhBu/giphy.gif
+            - Heartbeat animation:
+              https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif
+        -->
+        <div class="gif-container">
+            <img src="https://media.istockphoto.com/id/2193521353/photo/valentines-day-message-inside-of-a-heart-shaped-paper.jpg?s=612x612&w=0&k=20&c=kdTkxxyTMn7bfZTLljiOgxen7wRACsn0VWah_mgOiRI=" alt="Valentine's Day Love GIF">
+        </div>
+        <!-- ================================= -->
+        
+        <h1>Happy Valentine's Day!</h1>
+        
+        <!-- Replace [Her Name] with your girlfriend's name -->
+        <div class="sub-message">
+            For my beautiful sweet heart ❤️
+        </div>
+        
+        <!-- Optional sweet message – edit as you like -->
+        <div class="personal-note">
+            You make every day special. Love you!
+        </div>
+        
+        <div class="heart-deco">❤️ ❤️ ❤️</div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+            heart.style.fontSize = (Math.random() * 1.5 + 0.8) + 'rem';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            document.getElementById('hearts-container').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
